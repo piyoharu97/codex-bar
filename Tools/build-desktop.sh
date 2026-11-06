@@ -6,7 +6,7 @@ app="$(mktemp -d /private/tmp/codexquota-build.XXXXXX)/Codex bar.app"
 mkdir -p "$app/Contents/MacOS" "$app/Contents/Resources" .build/ModuleCache
 for arch in arm64 x86_64; do
   swiftc -O -target "$arch-apple-macosx14.0" -module-cache-path .build/ModuleCache \
-    Shared/Quota.swift Shared/QuotaView.swift Shared/ReleaseVersion.swift App/CodexClient.swift Desktop/*.swift \
+    Shared/Quota.swift Shared/QuotaView.swift Shared/ReleaseVersion.swift Shared/PublicReleaseFeed.swift App/CodexClient.swift Desktop/*.swift \
     -o ".build/CodexBar-$arch"
 done
 lipo -create .build/CodexBar-arm64 .build/CodexBar-x86_64 -output "$app/Contents/MacOS/CodexBar"

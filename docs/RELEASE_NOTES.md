@@ -1,7 +1,10 @@
-Codex bar 1.6.0
+Codex bar 1.7.0
 
-- Apple SiliconとIntelに対応するUniversal配布形式。
-- 非公開GitHub Releasesを使う更新確認と通知（インストールは手動）。
-- GitHub読み取りトークンは各Macのキーチェーンに保存。
-- Codex／ChatGPTロゴ、4種類の背景、淡い水色のログイン時起動スイッチ。
-- macOS 14以降。Apple公証なし。Intel実機での起動は未検証。
+- 公開GitHub Releasesからの、トークン不要の更新確認に変更。
+- GitHubトークンの入力・保存・読み出し処理を廃止。
+- 新規インストールでは自動確認を初期状態でオン。既存のオン／オフ設定は維持。
+- 認証ヘッダーやCookieを送らない通信と、更新・最新・アクセス制限・未公開時の動作をテスト。
+- ダウンロードとインストールは手動。通知にはmacOSの通知許可が必要。
+- macOS 14以降、Apple Silicon／IntelのUniversal版。Apple公証は未実施。
+
+1.6.0からは、このZIPを手動でダウンロードして置き換えてください。
