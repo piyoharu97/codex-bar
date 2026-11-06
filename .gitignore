@@ -1,0 +1,11 @@
+.build/
+dist/
+*.app/
+*.zip
+.DS_Store
+*.xcuserstate
+xcuserdata/
+.env
+.env.*
+*.p12
+*.mobileprovision
