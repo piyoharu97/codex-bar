@@ -7,7 +7,7 @@ export CODEX_BAR_OUTPUT="$PWD/dist/Codex bar.app"
 version="$(cat VERSION)"
 archive="Codex-bar-v${version}-universal.zip"
 codesign --verify --strict "$CODEX_BAR_OUTPUT"
-lipo -verify_arch arm64 x86_64 "$CODEX_BAR_OUTPUT/Contents/MacOS/CodexBar"
+lipo "$CODEX_BAR_OUTPUT/Contents/MacOS/CodexBar" -verify_arch arm64 x86_64
 ditto -c -k --norsrc --noextattr --keepParent "$CODEX_BAR_OUTPUT" "dist/$archive"
 (cd dist && shasum -a 256 "$archive" > "$archive.sha256")
 echo "配布用ファイル: dist/$archive"
